@@ -15,7 +15,7 @@ const (
 )
 
 func main() {
-	sandglass(11, '@', Green)
+	sandglass(11, '@', Purple)
 }
 
 func sandglass(size int, char rune, color Color) {
@@ -34,10 +34,12 @@ func sandglass(size int, char rune, color Color) {
 		sand[size-1-i] = d
 	}
 
+	res := string(color)
 	for _, v := range sand {
-		println(string(color) + string(v))
+		res += string(v) + "\n"
 	}
-	print(Reset)
+	res += string(Reset)
+	print(res)
 }
 
 func makeRow(size int, char rune) []rune {
